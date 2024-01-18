@@ -8,7 +8,7 @@ public class BaseDriver {
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
-        if (driver==null){ System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\ChromeDriver\\chromedriver-win64\\chromedriver.exegig");
+        if (driver==null){ System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\ChromeDriver\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
     }
 

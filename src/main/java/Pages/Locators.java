@@ -15,7 +15,7 @@ public class Locators extends MyMethods {
 
     }
 
-    @FindBy(css = "input#twotabsearchtextbox")
+    @FindBy(xpath = "//*[@id=\"twotabsearchtextbox\"]")
     private WebElement searchBox;
 
     @FindBy(css = "input#nav-search-submit-button")
@@ -49,6 +49,24 @@ public class Locators extends MyMethods {
 
     @FindBy(xpath = "//*[@id=\"auth-error-message-box\"]/div/h4")
     private WebElement errorMessage;
+
+    @FindBy(xpath = "//*[@id=\"search\"]/div[1]/div[1]/div/span[1]/div[1]/div[2]/div/div/span/div/div/div[3]/div[1]/h2/a/span")
+    private WebElement selectBook1;
+    @FindBy(css = "input#add-to-cart-button")
+    private WebElement addToCartButton;
+
+    @FindBy(css = "div#nav-cart-count-container > span.nav-cart-icon.nav-sprite")
+    private WebElement add1;
+
+    @FindBy(css = "div#nav-cart-text-container > span.nav-line-1")
+    private WebElement goToCard;
+
+    @FindBy(css = "form#activeCartViewForm span.a-size-small.sc-action-delete > span > input")
+    private WebElement removeProduct;
+
+    @FindBy(css = "div#nav-cart-text-container > span.nav-line-2")
+    private WebElement decreaseTo0;
+
 
 
 
@@ -85,6 +103,18 @@ public WebElement getWebElement(String elementName){
         return this.signOut;
     } else if ("errorMessage".equals(elementName)) {
         return this.errorMessage;
+    } else if ("selectBook1".equals(elementName)) {
+        return this.selectBook1;
+    } else if ("addToCartButton".equals(elementName)) {
+        return this.addToCartButton;
+    } else if ("add1".equals(elementName)) {
+        return this.add1;
+    } else if ("goToCard".equals(elementName)) {
+        return this.goToCard;
+    } else if ("removeProduct".equals(elementName)) {
+        return this.removeProduct;
+    } else if ("decreaseTo0".equals(elementName)) {
+        return this.decreaseTo0;
     }
 
     return null;

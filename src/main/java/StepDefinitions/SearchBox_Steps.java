@@ -20,11 +20,14 @@ public class SearchBox_Steps {
     public void givenTheUserIsOnTheAmazonHomepage() {
         baseDriver = new BaseDriver();
         baseDriver.getDriver().get("https://www.amazon.com.tr");
+
+
     }
 
     @When("the user searches for {string}")
     public void whenTheUserSearchesFor(String keyword) {
         locators.clickMethod(locators.getWebElement("searchBox"));
+        locators.waitUntilVisible(locators.getWebElement("searchBox"));
         locators.getWebElement("searchBox").sendKeys(keyword);
         locators.getWebElement("searchBoxButton").click();
 

@@ -1,6 +1,6 @@
 Feature: Login Feature
 
-  Background:
+  Background: the user is on the Amazon homepage
     Given the user is on the Amazon homepage
 
   Scenario: Log in with valid user credentials

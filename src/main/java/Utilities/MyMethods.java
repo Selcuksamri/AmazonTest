@@ -1,5 +1,7 @@
 package Utilities;
 
+import Pages.Locators;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -52,4 +54,34 @@ public class MyMethods {
         action.perform();
 
     }
+
+    public void scrollDown(int pixels) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) BaseDriver.getDriver();
+        jsExecutor.executeScript("window.scrollBy(0, " + pixels + ");");
+    }
+
+    public void clearTextInElement(String locatorKey) {
+        Locators locators = new Locators();
+        WebElement element = locators.getWebElement(locatorKey);
+        element.clear();
+    }
+
+    public void refreshPage() {
+        BaseDriver.getDriver().navigate().refresh();
+    }
+
+    public void clickMethodWithRetry(WebElement element, int maxRetry) {
+        for (int i = 0; i < maxRetry; i++) {
+            try {
+                waitUntilClickable(element);
+                element.click();
+                break;
+            } catch (Exception e) {
+                System.out.println("Element not found. Retrying...");
+            }
+        }
+    }
+
+
+
 }

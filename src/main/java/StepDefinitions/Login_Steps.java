@@ -20,12 +20,13 @@ public class Login_Steps {
         locators.sendKeysMethod(locators.getWebElement("passwordButton"),password);
         locators.clickMethod(locators.getWebElement("signInButton"));
         locators.HoverOver(locators.getWebElement("accountButton"));
-        locators.clickMethod(locators.getWebElement("signOut"));
 
 
     }
     @When("User logs in with {string}")
     public void user_logs_in_with(String email) {
+        locators.clickMethod(locators.getWebElement("signOut"));
+        locators.clickMethod(locators.getWebElement("homeLogo"));
         locators.HoverOver(locators.getWebElement("accountButton"));
         locators.clickMethod(locators.getWebElement("loginButton"));
         locators.sendKeysMethod(locators.getWebElement("emailButton"),email);

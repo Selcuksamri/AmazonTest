@@ -27,7 +27,7 @@ public class Locators extends MyMethods {
     @FindBy(xpath = "//*[@id=\"search\"]/div[1]/div[1]/div/span[1]/div[1]/div[1]/div/div/div/span[2]")
     private WebElement noResultText;
 
-    @FindBy (xpath = "//*[@id=\"nav-flyout-ya-signin\"]/a/span")
+    @FindBy (css = "div#nav-flyout-ya-signin span")
     private WebElement loginButton;
 
     @FindBy(css = "span#nav-link-accountList-nav-line-1")
@@ -67,15 +67,45 @@ public class Locators extends MyMethods {
     @FindBy(css = "div#nav-cart-text-container > span.nav-line-2")
     private WebElement decreaseTo0;
 
+    @FindBy(css = "div#a-page i.a-icon.a-icon-logo")
+    private WebElement homeLogo;
+
+    @FindBy(xpath = "/html/body/div[1]/div[1]/div[1]/div[1]/div/span[1]/div[1]/div[1]/div/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/a/span/span[2]")
+    private WebElement selectLaptopButton;
+
+    @FindBy(xpath = "//*[@id=\"g586025t37\"]/div/div/div/div/div/div[3]/div[8]/div[2]/div[3]/a")
+    private WebElement seeDetailsAcerLaptop1;
+
+    @FindBy(css = "input#add-to-wishlist-button-submit")
+    private WebElement addToWishlist;
+    
+    @FindBy(css = "a#atwl-dd-create-list > span")
+    private WebElement createList;
+
+    @FindBy(xpath = "//*[@id=\"list-name\"]")
+    private WebElement listName;
+
+    @FindBy(css = "span#wl-redesigned-create-list input")
+    private WebElement createList2;
+
+    @FindBy(css = "div#wl-huc-post-create-msg a")
+    private WebElement seeCreatedList;
+
+    @FindBy(css = "span#move-to-list-button-IIN5KMO0VNO6 input")
+    private WebElement moveItButton;
+
+    @FindBy(xpath = "/html/body/div[1]/div[1]/div/div/div/div/div/div[2]/div[8]/div/div/ul/li[2]/span/div/div/div/div[2]/div[3]/div/div[2]/div[1]/div/div/div[3]/form/span/span/span/input")
+    private WebElement removeFromList;
+
+    @FindBy(css = "div#no-items-section div.a-section.a-spacing-top-mini.a-text-left.zero-items-text-section > span")
+    private WebElement emptyListMessage;
+
+    @FindBy(css = "span#list-default-collaborator-label")
+    private WebElement haveAList;
 
 
 
-
-
-
-
-
-public WebElement getWebElement(String elementName){
+    public WebElement getWebElement(String elementName){
 
     if ("searchBox".equals(elementName)){
         return this.searchBox;
@@ -115,9 +145,32 @@ public WebElement getWebElement(String elementName){
         return this.removeProduct;
     } else if ("decreaseTo0".equals(elementName)) {
         return this.decreaseTo0;
+    } else if ("homeLogo".equals(elementName)) {
+        return this.homeLogo;
+    } else if ("selectLaptopButton".equals(elementName)) {
+        return this.selectLaptopButton;
+    } else if ("seeDetailsAcerLaptop1".equals(elementName)) {
+        return this.seeDetailsAcerLaptop1;
+    } else if ("addToWishlist".equals(elementName)) {
+        return this.addToWishlist;
+    } else if ("createList".equals(elementName)) {
+        return this.createList;
+    } else if ("listName".equals(elementName)) {
+        return this.listName;
+    } else if ("createList2".equals(elementName)) {
+        return this.createList2;
+    } else if ("seeCreatedList".equals(elementName)) {
+        return this.seeCreatedList;
+    } else if ("moveItButton".equals(elementName)) {
+        return this.moveItButton;
+    } else if ("removeFromList".equals(elementName)) {
+        return this.removeFromList;
+    } else if ("emptyListMessage".equals(elementName)) {
+        return this.emptyListMessage;
+    } else if ("haveAList".equals(elementName)) {
+        return this.haveAList;
     }
-
-    return null;
+        return null;
 
 
 
